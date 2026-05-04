@@ -1,1 +1,63 @@
-{% extends 'base.html' %}{% block content %}<h1>Summary Dashboard</h1><div class="row g-3">{% for label, value in totals.items() %}<div class="col-md-4"><div class="card shadow-sm"><div class="card-body"><h6 class="text-muted">{{ label.replace('_',' ').title() }}</h6><h3>{{ '%.2f'|format(value) if value.__class__.__name__ in ['Decimal','float'] else value }}</h3></div></div></div>{% endfor %}</div><h2 class="mt-4">Course Relationship Summary</h2><table class="table table-striped"><tr><th>Course</th><th>Enrollments</th><th>Average Progress</th></tr>{% for row in course_summary %}<tr><td>{{ row.course_name }}</td><td>{{ row.enrolled }}</td><td>{{ '%.2f'|format(row.avg_progress or 0) }}%</td></tr>{% endfor %}</table><a class="btn btn-primary" href="{{ url_for('main.seed_data') }}">Load Sample Data</a>{% endblock %}
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- 1. Dashboard Title -->
+    <h1>Summary Dashboard</h1>
+
+    <!-- 2. Dashboard Summary Cards -->
+    <div class="row g-3">
+
+        <!-- 2.1 Loop through dashboard totals -->
+        {% for label, value in totals.items() %}
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+
+                    <!-- 2.2 Metric Label -->
+                    <h6 class="text-muted">
+                        {{ label.replace('_',' ').title() }}
+                    </h6>
+
+                    <!-- 2.3 Metric Value -->
+                    <h3>
+                        {{ '%.2f'|format(value) if value.__class__.__name__ in ['Decimal','float'] else value }}
+                    </h3>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <!-- 3. Course Relationship Summary Section -->
+    <h2 class="mt-4">Course Relationship Summary</h2>
+
+    <!-- 4. Course Summary Table -->
+    <table class="table table-striped">
+
+        <!-- 4.1 Table Header -->
+        <tr>
+            <th>Course</th>
+            <th>Enrollments</th>
+            <th>Average Progress</th>
+        </tr>
+
+        <!-- 4.2 Loop through course summary rows -->
+        {% for row in course_summary %}
+        <tr>
+            <td>{{ row.course_name }}</td>
+            <td>{{ row.enrolled }}</td>
+            <td>{{ '%.2f'|format(row.avg_progress or 0) }}%</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <!-- 5. Load Sample Data Button -->
+    <a class="btn btn-primary" href="{{ url_for('main.seed_data') }}">
+        Load Sample Data
+    </a>
+
+{% endblock %}
