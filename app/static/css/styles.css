@@ -1,4 +1,20 @@
-body { background: #f7f7fb; }
-.card { border-radius: 14px; }
-.table { background: white; }
-label { margin-top: 10px; font-weight: 600; }
+/* 1. Main page background */
+body {
+    background: #f7f7fb;
+}
+
+/* 2. Card styling */
+.card {
+    border-radius: 14px;
+}
+
+/* 3. Table background */
+.table {
+    background: white;
+}
+
+/* 4. Form label spacing and emphasis */
+label {
+    margin-top: 10px;
+    font-weight: 600;
+}
