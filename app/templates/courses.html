@@ -1,1 +1,56 @@
-{% extends 'base.html' %}{% block content %}<div class="d-flex justify-content-between"><h1>Courses</h1><a class="btn btn-primary" href="{{ url_for('main.new_course') }}">Add Course</a></div><table class="table"><tr><th>Course</th><th>Instructor</th><th>Dates</th><th></th></tr>{% for c in courses %}<tr><td><a href="{{ url_for('main.course_detail', course_id=c.course_id) }}">{{ c.course_name }}</a></td><td>{{ c.instructor.instructor_name }}</td><td>{{ c.start_date }} to {{ c.end_date }}</td><td><form method="post" action="{{ url_for('main.delete_course', course_id=c.course_id) }}"><button class="btn btn-sm btn-danger">Delete</button></form></td></tr>{% endfor %}</table>{% endblock %}
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- 1. Header Section -->
+    <div class="d-flex justify-content-between">
+        <!-- 1.1 Page Title -->
+        <h1>Courses</h1>
+
+        <!-- 1.2 Add Course Button -->
+        <a class="btn btn-primary" href="{{ url_for('main.new_course') }}">
+            Add Course
+        </a>
+    </div>
+
+    <!-- 2. Courses Table -->
+    <table class="table">
+
+        <!-- 2.1 Table Header -->
+        <tr>
+            <th>Course</th>
+            <th>Instructor</th>
+            <th>Dates</th>
+            <th></th>
+        </tr>
+
+        <!-- 2.2 Table Body (Loop through courses) -->
+        {% for c in courses %}
+        <tr>
+
+            <!-- 2.2.1 Course Name with link -->
+            <td>
+                <a href="{{ url_for('main.course_detail', course_id=c.course_id) }}">
+                    {{ c.course_name }}
+                </a>
+            </td>
+
+            <!-- 2.2.2 Instructor Name -->
+            <td>{{ c.instructor.instructor_name }}</td>
+
+            <!-- 2.2.3 Course Duration -->
+            <td>{{ c.start_date }} to {{ c.end_date }}</td>
+
+            <!-- 2.2.4 Delete Action -->
+            <td>
+                <form method="post" action="{{ url_for('main.delete_course', course_id=c.course_id) }}">
+                    <button class="btn btn-sm btn-danger">Delete</button>
+                </form>
+            </td>
+
+        </tr>
+        {% endfor %}
+
+    </table>
+
+{% endblock %}
