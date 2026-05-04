@@ -1,1 +1,32 @@
-{% extends 'base.html' %}{% block content %}<h1>Add Course</h1><form method="post" class="card card-body"><label>Course Name</label><input class="form-control" name="course_name" required><label>Instructor</label><input class="form-control" name="instructor_name" required><label>Start Date</label><input class="form-control" type="date" name="start_date" required><label>End Date</label><input class="form-control" type="date" name="end_date" required><button class="btn btn-primary mt-3">Save</button></form>{% endblock %}
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- 1. Page Title -->
+    <h1>Add Course</h1>
+
+    <!-- 2. Course Form -->
+    <form method="post" class="card card-body">
+
+        <!-- 2.1 Course Name -->
+        <label>Course Name</label>
+        <input class="form-control" name="course_name" required>
+
+        <!-- 2.2 Instructor Name -->
+        <label>Instructor</label>
+        <input class="form-control" name="instructor_name" required>
+
+        <!-- 2.3 Start Date -->
+        <label>Start Date</label>
+        <input class="form-control" type="date" name="start_date" required>
+
+        <!-- 2.4 End Date -->
+        <label>End Date</label>
+        <input class="form-control" type="date" name="end_date" required>
+
+        <!-- 2.5 Submit Button -->
+        <button class="btn btn-primary mt-3">Save</button>
+
+    </form>
+
+{% endblock %}
