@@ -1,1 +1,46 @@
-{% extends 'base.html' %}{% block content %}<h1>{{ course.course_name }}</h1><p><b>Instructor:</b> {{ course.instructor.instructor_name }}</p><h3>Enrolled Students</h3><table class="table"><tr><th>Student</th><th>Progress</th><th>Source</th></tr>{% for e in course.enrollments %}<tr><td>{{ e.student.full_name }}</td><td>{{ e.progress_percent }}%</td><td>{{ e.record_source }}</td></tr>{% endfor %}</table><h3>Assignments</h3><ul>{% for a in course.assignments %}<li>{{ a.title }} — {{ a.max_score }} points, due {{ a.due_date }}</li>{% endfor %}</ul>{% endblock %}
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- 1. Course Title -->
+    <h1>{{ course.course_name }}</h1>
+
+    <!-- 2. Instructor Details -->
+    <p>
+        <b>Instructor:</b> {{ course.instructor.instructor_name }}
+    </p>
+
+    <!-- 3. Enrolled Students Section -->
+    <h3>Enrolled Students</h3>
+
+    <!-- 3.1 Students Table -->
+    <table class="table">
+        <tr>
+            <th>Student</th>
+            <th>Progress</th>
+            <th>Source</th>
+        </tr>
+
+        <!-- 3.2 Loop through enrollments -->
+        {% for e in course.enrollments %}
+        <tr>
+            <td>{{ e.student.full_name }}</td>
+            <td>{{ e.progress_percent }}%</td>
+            <td>{{ e.record_source }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- 4. Assignments Section -->
+    <h3>Assignments</h3>
+
+    <!-- 4.1 Assignment List -->
+    <ul>
+        {% for a in course.assignments %}
+        <li>
+            {{ a.title }} — {{ a.max_score }} points, due {{ a.due_date }}
+        </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
