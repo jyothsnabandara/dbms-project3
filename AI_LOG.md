@@ -1,19 +1,52 @@
 # AI Assistance Log
 
-## Entry 1
-**Tool:** ChatGPT  
-**Prompt:** Asked for help creating a detailed DBMS Project 3 full-stack Python application using the provided Project 3 requirements and existing DDL file.  
-**AI Output Summary:** Generated a project scaffold, Flask/SQLAlchemy source code, 3NF schema, README, normalization documentation, and version-control guidance.  
-**My Modification/Verification:** I reviewed the generated structure against my DBMS Project 3 rubric, checked that the schema matches my academic progress database, and verified that the required tables, relationships, validation, dashboard, and transaction feature are present.
+---
 
-## Entry 2
-**Tool:** ChatGPT  
-**Prompt:** Asked for a normalization report that identifies functional dependencies, anomalies, decomposition steps, and the final relational schema.  
-**AI Output Summary:** Drafted a 3NF audit that separates programs and instructors from the starting schema.  
-**My Modification/Verification:** I confirmed that the decomposed schema removes repeating program and instructor details and still supports the application requirements.
+## Section - 1
+Full-Stack Application Development Assistance
 
-## Entry 3
-**Tool:** ChatGPT  
-**Prompt:** Asked for Git/version-control documentation showing five incremental commits.  
-**AI Output Summary:** Provided a commit sequence and repository instructions.  
-**My Modification/Verification:** I will run the commands locally in order, test each stage, and push the completed repository to GitHub.
+### Tool
+ChatGPT
+
+### Prompt
+Requested assistance in developing a detailed DBMS Project 3 full-stack Python application based on the provided Project 3 requirements and the supplied DDL database structure.
+
+### AI Output Summary
+Generated the initial project structure, Flask and SQLAlchemy source code, normalized database schema, README documentation, normalization report, and Git/version-control guidance.
+
+### My Modification / Verification
+I manually reviewed the generated application structure and compared it against the DBMS Project 3 rubric requirements. I verified that the schema correctly aligns with my academic progress management database and confirmed that all required components such as CRUD operations, table relationships, validation checks, dashboard analytics, and transaction handling were properly implemented and tested.
+
+---
+
+## Section - 2
+Database Normalization and Schema Review
+
+### Tool
+ChatGPT
+
+### Prompt
+Requested help preparing a normalization report that includes functional dependencies, anomaly identification, decomposition steps, and the final relational schema in Third Normal Form (3NF).
+
+### AI Output Summary
+Generated a detailed normalization audit and proposed decomposition of the original schema by separating repeating program and instructor information into independent relational structures.
+
+### My Modification / Verification
+I carefully reviewed the normalization process and verified that the updated schema removes redundancy, insertion/update anomalies, and repeating data while still maintaining all required relationships and supporting the functional requirements of the application.
+
+---
+
+## Section - 3
+Git Version Control and Repository Documentation
+
+### Tool
+ChatGPT
+
+### Prompt
+Requested assistance with Git and version-control documentation including realistic incremental commit history and repository setup guidance.
+
+### AI Output Summary
+Provided Git initialization steps, repository setup instructions, and a sequence of incremental commit messages to demonstrate progressive project development.
+
+### My Modification / Verification
+I executed the Git commands locally, validated the application after each major update, and pushed the completed repository to GitHub while maintaining a clean commit history and proper project structure.
