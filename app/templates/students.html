@@ -1,1 +1,80 @@
-{% extends 'base.html' %}{% block content %}<div class="d-flex justify-content-between"><h1>Students</h1><a class="btn btn-primary" href="{{ url_for('main.new_student') }}">Add Student</a></div><table class="table table-hover"><tr><th>Name</th><th>Email</th><th>Program</th><th>Status</th><th>Action</th></tr>{% for s in students %}<tr><td>{{ s.full_name }}</td><td>{{ s.email }}</td><td>{{ s.program.program_name }}</td><td>{{ s.student_status }}</td><td><a class="btn btn-sm btn-secondary" href="{{ url_for('main.edit_student', student_id=s.student_id) }}">Edit</a><form class="d-inline" method="post" action="{{ url_for('main.delete_student', student_id=s.student_id) }}"><button class="btn btn-sm btn-danger">Delete</button></form></td></tr>{% endfor %}</table>{% endblock %}
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- =========================================
+     Students List Section
+     Displays all students with edit/delete actions
+========================================= -->
+
+<!-- 1. Page Header -->
+<div class="d-flex justify-content-between">
+
+    <!-- 1.1 Page Title -->
+    <h1>Students</h1>
+
+    <!-- 1.2 Add Student Button -->
+    <a class="btn btn-primary" href="{{ url_for('main.new_student') }}">
+        Add Student
+    </a>
+
+</div>
+
+<!-- 2. Students Table -->
+<table class="table table-hover">
+
+    <!-- 2.1 Table Header -->
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Program</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+
+    <!-- 2.2 Table Body: Loop through student records -->
+    {% for s in students %}
+    <tr>
+
+        <!-- 2.2.1 Student Name -->
+        <td>{{ s.full_name }}</td>
+
+        <!-- 2.2.2 Student Email -->
+        <td>{{ s.email }}</td>
+
+        <!-- 2.2.3 Program Name -->
+        <td>{{ s.program.program_name }}</td>
+
+        <!-- 2.2.4 Student Status -->
+        <td>{{ s.student_status }}</td>
+
+        <!-- 2.2.5 Student Actions -->
+        <td>
+
+            <!-- Edit Student Button -->
+            <a
+                class="btn btn-sm btn-secondary"
+                href="{{ url_for('main.edit_student', student_id=s.student_id) }}"
+            >
+                Edit
+            </a>
+
+            <!-- Delete Student Form -->
+            <form
+                class="d-inline"
+                method="post"
+                action="{{ url_for('main.delete_student', student_id=s.student_id) }}"
+            >
+                <button class="btn btn-sm btn-danger">
+                    Delete
+                </button>
+            </form>
+
+        </td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}
