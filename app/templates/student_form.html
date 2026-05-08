@@ -1,1 +1,73 @@
-{% extends 'base.html' %}{% block content %}<h1>{{ 'Edit' if student else 'Add' }} Student</h1><form method="post" class="card card-body"><label>Full Name</label><input class="form-control" name="full_name" value="{{ student.full_name if student else '' }}" required><label>Email</label><input class="form-control" name="email" value="{{ student.email if student else '' }}" required><label>Program</label><input class="form-control" name="program_name" value="{{ student.program.program_name if student else '' }}" required><label>Status</label><select class="form-select" name="student_status"><option>Active</option><option>Inactive</option><option>Graduated</option><option>On Leave</option></select><button class="btn btn-primary mt-3">Save</button></form>{% endblock %}
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- =========================================
+     Student Form Section
+     Used for both Add and Edit operations
+========================================= -->
+
+<h1>
+    {{ 'Edit' if student else 'Add' }} Student
+</h1>
+
+<!-- =========================================
+     Student Form Card
+========================================= -->
+
+<form method="post" class="card card-body">
+
+    <!-- Full Name Field -->
+    <label for="full_name">Full Name</label>
+    <input
+        class="form-control"
+        id="full_name"
+        name="full_name"
+        value="{{ student.full_name if student else '' }}"
+        required
+    >
+
+    <!-- Email Field -->
+    <label for="email">Email</label>
+    <input
+        class="form-control"
+        id="email"
+        name="email"
+        value="{{ student.email if student else '' }}"
+        required
+    >
+
+    <!-- Program Name Field -->
+    <label for="program_name">Program</label>
+    <input
+        class="form-control"
+        id="program_name"
+        name="program_name"
+        value="{{ student.program.program_name if student else '' }}"
+        required
+    >
+
+    <!-- Student Status Dropdown -->
+    <label for="student_status">Status</label>
+
+    <select
+        class="form-select"
+        id="student_status"
+        name="student_status"
+    >
+
+        <option>Active</option>
+        <option>Inactive</option>
+        <option>Graduated</option>
+        <option>On Leave</option>
+
+    </select>
+
+    <!-- Submit Button -->
+    <button class="btn btn-primary mt-3">
+        Save
+    </button>
+
+</form>
+
+{% endblock %}
