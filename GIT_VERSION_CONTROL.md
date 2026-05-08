@@ -38,3 +38,4 @@ The repository includes the application source code, normalized SQL schema, norm
 ## How to check commits
 
 git log --oneline
+
