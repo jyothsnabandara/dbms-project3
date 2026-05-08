@@ -1,6 +1,17 @@
+# 1. Virtual environment
 venv/
+
+# 2. Environment variables
 .env
+
+# 3. Python cache folders
 __pycache__/
+
+# 4. Compiled Python files
 *.pyc
+
+# 5. Local SQLite database files
 instance/*.db
+
+# 6. macOS system files
 .DS_Store
