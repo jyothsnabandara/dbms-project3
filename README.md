@@ -1,11 +1,9 @@
- DBMS Project 3 - Academic Progress Tracker
-
 ## Project Description
 This full-stack Flask application manages students, courses, enrollments, assignments, and submissions for an academic progress tracking system. It is designed for instructors or academic staff who need to monitor course enrollment, assignment performance, and student progress from a normalized relational database.
 
 # My GitHub Repository Link
 
-`https://github.com/jyothsnaBandara/dbms-project3`
+https://github.com/jyothsnaBandara/dbms-project3
 
 
 ## Technical Stack
@@ -71,6 +69,7 @@ python run.py
  open the browser and access:
  http://127.0.0.1:5000
 
+
  ## How to run the project on Windows OS
 
  cd dbms_project3
@@ -81,7 +80,7 @@ python run.py
  open the browser and access:
  http://127.0.0.1:5000
 
- 
+
 ## Navigation Guide
 - / Summary dashboard
 - /students Student list, create, edit, delete
